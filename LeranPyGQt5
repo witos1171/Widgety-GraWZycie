@@ -1,0 +1,32 @@
+import sys
+from PyQt5 import QtWidgets,QtGui
+
+def Wimdow():
+    app=QtWidgets.QApplication(sys.argv)
+    w = QtWidgets.QWidget()
+    l1 = QtWidgets.QLabel(w)
+    l2 = QtWidgets.QLabel(w)
+    b = QtWidgets.QPushButton(w)
+
+    h_box = QtWidgets.QHBoxLayout()
+    h_box.addStretch()
+    h_box.addWidget(l1)
+    h_box.addStretch()
+    h_box.addWidget(l2)
+    h_box.addStretch()
+
+    v_box = QtWidgets.QVBoxLayout()
+    v_box.addWidget(b)
+    v_box.addLayout(h_box)
+
+    w.setLayout(v_box)
+
+    l1.setText("Hi Baby!!!")
+    l2.setPixmap(QtGui.QPixmap('serce.png'))
+    b.setText("Push ME")
+    w.setWindowTitle("Gra W życia")
+    w.setGeometry(500,120,600,500)
+    w.show()
+
+    sys.exit(app.exec_())
+Wimdow()
